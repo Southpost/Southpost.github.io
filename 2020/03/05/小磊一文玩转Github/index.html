@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo搭建个人博客 | Hexo</title>
+  <title>小磊一文玩转Github | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo搭建个人博客 | Hexo">
+  <meta name="description" content="小磊一文玩转Github | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="小磊一文玩转Github">
 <meta property="og:type" content="article">
@@ -229,9 +229,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-小磊一文玩转Github" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hexo搭建个人博客</h1>
+        <h1 class="article-title">小磊一文玩转Github</h1>
     
     <div class="article-meta">
         
@@ -241,7 +241,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-19 01:25:36'>2020-02-18 17:17</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-05 15:36:35'>2020-03-05 15:30</time>
         
     </div>
     <div class="article-meta">
@@ -263,7 +263,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo搭建个人博客"><span class="toc-text">Hexo搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-SHH配置"><span class="toc-text">Github SHH配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo的本地使用"><span class="toc-text">Hexo的本地使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题"><span class="toc-text">自定义主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客部署到GitHub上"><span class="toc-text">博客部署到GitHub上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo之主题使用"><span class="toc-text">Hexo之主题使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题自定义补充"><span class="toc-text">主题自定义补充</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小磊一文玩转Github"><span class="toc-text">小磊一文玩转Github</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -279,54 +279,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hexo搭建个人博客"><a href="#Hexo搭建个人博客" class="headerlink" title="Hexo搭建个人博客"></a>Hexo搭建个人博客</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node安装</a></p>
-<p>1、一般安装在D盘，默认会选中Add to PATH，所以一直点击next即可</p>
-<p>2、检验是否安装：在相应文件的目录下，按下shift+鼠标右键，输入<strong>node -v</strong>来检查安装版本</p>
-</li>
-<li><p><a href="https://github.com/" target="_blank" rel="noopener">GitHub注册</a><br>1、具体注册请自行百度<br>2、建一个仓库（Repository），具体操作：点击Start a project –&gt;Repository name下输入用户名.github.io（例如，Southpost.github.io）–&gt;Creating repository即可</p>
-</li>
-<li><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git安装</a><br>1、点击next，看到Use Window‘s default console windown选项选择，然后继续next，建议将它装在D盘，然后点击Finish就安装成功了，有没有感觉很Easy</p>
-</li>
-</ul>
-<h2 id="Github-SHH配置"><a href="#Github-SHH配置" class="headerlink" title="Github SHH配置"></a>Github SHH配置</h2><ul>
-<li>打开安装好的git，输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;自己的QQ邮箱&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>打开GitHub –&gt; settings –&gt; SSH and GPG keys –&gt; Title随便写 –&gt; 在个人下载git的目录下寻找.SSH文件夹 –&gt; 找到id_rsa.pub，利用记事本的方式打开，并复制里面的全部内容 –&gt; 回到GitHub，粘贴刚才的内容到Key中 –&gt;点击Add SSH Key即可</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hexo的本地使用"><a href="#Hexo的本地使用" class="headerlink" title="Hexo的本地使用"></a>Hexo的本地使用</h2><ul>
-<li><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo的安装</a><br>选择自己想要安装的文件目录，新建一个blog文件夹,在此文件夹下打开终端（shift+鼠标右键），输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>说明：由于某些大家都知道的缘故，npm官方源在国内的下载速度极其慢，用官网的npm install hexo-cli -g速度非常感人，所以不推荐这种方式。这里我推荐用淘宝的npm分流——cnpm。然后等着装完即可，之后的用法和npm一样，无非是把npm install改成cnpm install,但是速度比之前快了不止一个数量级(不过下文为了方便理解，还是会用默认的npm安装，如果你发现速度不好的话，请自行替换成’cnpm’) </p>
-</blockquote>
-</li>
-<li><p>Hexo初始化<br>上述安装完成后继续输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 自定义的博客名</span><br></pre></td></tr></table></figure></li>
-<li><p>进阶安装和使用<br>进入上述的自定义博客名目录，输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install</span><br></pre></td></tr></table></figure></li>
-<li><p>本地运行（基本ok）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 自定义窗口（例如，0618）</span><br></pre></td></tr></table></figure>
-<p>然后本地浏览器运行即可，例如：localhost：0618</p>
-<h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2></li>
-<li><p><a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sunlime的安装</a><br>主要用途：为了编辑自定义主题</p>
-</li>
-<li><p>打开Sublime，将自定义文件夹直接拖进去，然后可以进行编辑</p>
-</li>
-</ul>
-<h2 id="博客部署到GitHub上"><a href="#博客部署到GitHub上" class="headerlink" title="博客部署到GitHub上"></a>博客部署到GitHub上</h2><ul>
-<li>打开sublime，找到_condig.yml文件夹，修改相关配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">author: 原先GitHub的自定义名</span><br><span class="line">url: https:&#x2F;&#x2F;原先GitHub的自定义名.github.io</span><br><span class="line">type: git</span><br><span class="line">repo: 你的仓库地址</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
-<li>安装插件，博客根目录，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>设置自己的GitHub<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global uesr.email &quot;QQ邮箱&quot; 后回车</span><br><span class="line">git config --global uesr.name &quot;原先GitHub的自定义名&quot; 后回车</span><br></pre></td></tr></table></figure></li>
-<li>提交发布<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g 后回车</span><br><span class="line">hexo d 后回车</span><br></pre></td></tr></table></figure></li>
-<li>访问：https://原先GitHub的自定义名.github.io</li>
-</ul>
-<h2 id="Hexo之主题使用"><a href="#Hexo之主题使用" class="headerlink" title="Hexo之主题使用"></a><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo之主题使用</a></h2><p>  选择相应的问题进行下载（zip），然后将其放到themes文件夹下就OK了</p>
-<h2 id="主题自定义补充"><a href="#主题自定义补充" class="headerlink" title="主题自定义补充"></a>主题自定义补充</h2><p>  想要修改主题的一些个性化设置，比如，扫描二维码你可以到themes文件夹下，找到img文件夹进行修改；也可以到_config.yml(主题目录下的，不是博客根目录下的)文件夹下进行修改</p>
-<p>##相关文章推荐（记得关注我，谢谢）<br>  <a href="https://www.bilibili.com/video/av24897960?p=9" target="_blank" rel="noopener">常规搭建</a><br>  <a href="http://chitanda.me/2015/06/11/tips-for-setup-hexo/" target="_blank" rel="noopener">问题查询</a></p>
-
+        <h1 id="小磊一文玩转Github"><a href="#小磊一文玩转Github" class="headerlink" title="小磊一文玩转Github"></a>小磊一文玩转Github</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
     </div>
@@ -339,12 +292,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hexo搭建个人博客</p>
+    <p><span class="copy-title">文章标题:</span>小磊一文玩转Github</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-18, 17:17:27</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-19, 01:25:36</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/18/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="Hexo搭建个人博客">https://southpost.github.io/2020/02/18/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</a>
+    <p><span class="copy-title">发布时间:</span>2020-03-05, 15:30:40</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-05, 15:36:35</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/" title="小磊一文玩转Github">https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
