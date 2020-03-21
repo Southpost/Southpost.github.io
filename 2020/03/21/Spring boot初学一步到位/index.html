@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小磊一文玩转Github | Hexo</title>
+  <title>Spring boot初学一步到位 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="小磊一文玩转Github | Hexo">
+  <meta name="description" content="Spring boot初学一步到位 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Hexo搭建个人博客准备工作 Node安装 1、一般安装在D盘，默认会选中Add to PATH，所以一直点击next即可 2、检验是否安装：在相应文件的目录下，按下shift+鼠标右键，输入node -v来检查安装版本  GitHub注册1、具体注册请自行百度2、建一个仓库（Repository），具体操作：点击Start a project –&gt;Repository name下输入用户名">
 <meta property="og:type" content="article">
@@ -237,9 +237,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-小磊一文玩转Github" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Spring boot初学一步到位" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小磊一文玩转Github</h1>
+        <h1 class="article-title">Spring boot初学一步到位</h1>
     
     <div class="article-meta">
         
@@ -249,7 +249,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-05 17:09:42'>2020-03-05 15:30</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-21 13:28:57'>2020-03-21 13:28</time>
         
     </div>
     <div class="article-meta">
@@ -271,7 +271,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小磊一文玩转Github"><span class="toc-text">小磊一文玩转Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#克隆操作"><span class="toc-text">克隆操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将本地项目推送到GitHub"><span class="toc-text">将本地项目推送到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决冲突"><span class="toc-text">如何解决冲突</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot初学一步到位"><span class="toc-text">Spring boot初学一步到位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发前准备"><span class="toc-text">开发前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-8安装及配置环境变量"><span class="toc-text">java 8安装及配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#intellij-idea下载"><span class="toc-text">intellij idea下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一个Java-web的实现"><span class="toc-text">第一个Java web的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -287,21 +287,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="小磊一文玩转Github"><a href="#小磊一文玩转Github" class="headerlink" title="小磊一文玩转Github"></a>小磊一文玩转Github</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git安装</a></li>
-<li>Github的注册工作相对来说比较简单，这里就不一一阐述了<h2 id="克隆操作"><a href="#克隆操作" class="headerlink" title="克隆操作"></a>克隆操作</h2></li>
-<li>有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击<strong>Git Bash Here</strong>，输入命令<strong>git clone 仓库地址</strong>即可</li>
-<li>这里注意SSH创建密匙的操作。<h2 id="将本地项目推送到GitHub"><a href="#将本地项目推送到GitHub" class="headerlink" title="将本地项目推送到GitHub"></a>将本地项目推送到GitHub</h2></li>
-<li>先到暂存区（index），输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure>
-如果在当前目录，则利用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></li>
-<li>推送，输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;查看&quot;</span><br></pre></td></tr></table></figure></li>
-<li>提交命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2></li>
-<li>可以利用<strong>git status</strong>命令查看当期状态；<strong>初次使用会有邮箱问题，请注意</strong> </li>
-<li>查看日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></li>
-<li>清空当前面板<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cls</span><br></pre></td></tr></table></figure>
-<h2 id="如何解决冲突"><a href="#如何解决冲突" class="headerlink" title="如何解决冲突"></a>如何解决冲突</h2></li>
-<li>多人修改一个文件时，会有冲突的产生。在push之前，输入<strong>git pull</strong>,然后回到当前文件夹，将自己和别人写的有效的东西进行合并，删除无用的东西，执行提交操作</li>
+        <h1 id="Spring-boot初学一步到位"><a href="#Spring-boot初学一步到位" class="headerlink" title="Spring boot初学一步到位"></a>Spring boot初学一步到位</h1><h2 id="开发前准备"><a href="#开发前准备" class="headerlink" title="开发前准备"></a>开发前准备</h2><h3 id="java-8安装及配置环境变量"><a href="#java-8安装及配置环境变量" class="headerlink" title="java 8安装及配置环境变量"></a>java 8安装及配置环境变量</h3><ul>
+<li>jdk的安装与配置是Java学习的第一步，下面记录一下具体过程。首先根据自己系统下载对应版本。下载地址<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br><img src="1.png" alt=""></li>
+<li>先点击 接受 Accept License Agreement<br>根据自己的操作系统选择不同版本下载<br>安装的时候最好选择自定义安装目录，后续会用到，安装路径要记得。我自己自定义安装在D盘自己新建一个Java文件夹里面</li>
+<li>环境变量的配置<br>1、右键“此电脑”—&gt;“属性”—&gt;“高级系统设置”—&gt;“高级”—&gt;“环境变量”—&gt;“新建”：<br><img src="2.png" alt=""><br>2、新建环境变量JAVA_HOME<br> 变量名：JAVA_HOME；<br> 变量值：自己的jdk安装目录(下图是举例)。<br><img src="3.png" alt=""><br>3、在系统变量中找到“Path”，在“Path”里面点击“编辑”<br><img src="4.png" alt=""><br>4、选择“新建”，新建两条路径<br> %JAVA_HOME%\bin<br> %JAVA_HOME%\jre\bin<br> <img src="5.png" alt=""><br>5、查看是否成功<br><img src="6.png" alt=""></li>
+</ul>
+<h3 id="intellij-idea下载"><a href="#intellij-idea下载" class="headerlink" title="intellij idea下载"></a>intellij idea下载</h3><ul>
+<li><a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">官网下载地址</a><br><img src="7.png" alt=""></li>
+</ul>
+<h3 id="第一个Java-web的实现"><a href="#第一个Java-web的实现" class="headerlink" title="第一个Java web的实现"></a>第一个Java web的实现</h3><ul>
+<li>创建新项目<br>1、File—&gt;New—&gt;Project<br>2、选择<br><img src="8.png" alt=""><br>3、点击next<br><img src="9.png" alt=""><br>4、下一步<br><img src="10.png" alt=""><br>5、最后点击Finish</li>
+<li>打开代码 src&gt;main&gt;java&gt; com.example&gt;demo<br>1、在demo文件下，点击鼠标右键选择New—&gt;package，创建controller包<br><img src="11.png" alt=""><br>2、在此包下创建HelloWorld类<br><img src="12.png" alt=""><br>3、执行图片代码<br><img src="13.png" alt=""><br>4、启动项目<br><img src="14.png" alt=""></li>
+<li>登录 <a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a> 上面的程序会看到如下的结果：<br><img src="15.png" alt=""></li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>请各位小伙伴们耐心参考上述文档呦</li>
 </ul>
 
       
@@ -316,12 +316,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>小磊一文玩转Github</p>
+    <p><span class="copy-title">文章标题:</span>Spring boot初学一步到位</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-05, 15:30:40</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-05, 17:09:42</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/" title="小磊一文玩转Github">https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/</a>
+    <p><span class="copy-title">发布时间:</span>2020-03-21, 13:28:57</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-21, 13:28:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/21/Spring%20boot%E5%88%9D%E5%AD%A6%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/" title="Spring boot初学一步到位">https://southpost.github.io/2020/03/21/Spring%20boot%E5%88%9D%E5%AD%A6%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
