@@ -6,17 +6,27 @@
   <meta name="keywords" content="">
   <meta name="description" content="Spring-boot + MySQL + MyBatis | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="小磊一文玩转Github前期准备 Git安装 Github的注册工作相对来说比较简单，这里就不一一阐述了克隆操作 有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击Git Bash Here，输入命令git clone 仓库地址即可 这">
+<meta name="description" content="Spring-boot + MySQL + MyBatis准备工作 IntelliJ IDEA旗舰版2019.1.4 MySQL 8.0.12  创建一个user表 在数据库demo中创建一个user表，包含字段id，name，gender数据库的基本知识可查看：小磊福利 命令如下：  1234567create database if not exists demo character set">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小磊一文玩转Github">
-<meta property="og:url" content="https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/index.html">
+<meta property="og:title" content="Spring-boot + MySQL + MyBatis">
+<meta property="og:url" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="小磊一文玩转Github前期准备 Git安装 Github的注册工作相对来说比较简单，这里就不一一阐述了克隆操作 有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击Git Bash Here，输入命令git clone 仓库地址即可 这">
+<meta property="og:description" content="Spring-boot + MySQL + MyBatis准备工作 IntelliJ IDEA旗舰版2019.1.4 MySQL 8.0.12  创建一个user表 在数据库demo中创建一个user表，包含字段id，name，gender数据库的基本知识可查看：小磊福利 命令如下：  1234567create database if not exists demo character set">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-05T07:30:40.826Z">
-<meta property="article:modified_time" content="2020-03-05T09:09:42.668Z">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/mysql.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E8%87%AA%E5%8A%A8GetSet1.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E8%87%AA%E5%8A%A8GetSet2.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E6%9F%A5%E8%AF%A2%E5%8D%95%E6%9D%A1%E8%AE%B0%E5%BD%95.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/%E6%90%9E%E7%AC%91.png">
+<meta property="article:published_time" content="2020-03-28T13:18:59.466Z">
+<meta property="article:modified_time" content="2020-03-28T17:56:17.034Z">
 <meta property="article:author" content="南邮石磊">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/mysql.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -257,7 +267,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-29 01:49:18'>2020-03-28 21:18</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-29 01:56:17'>2020-03-28 21:18</time>
         
     </div>
     <div class="article-meta">
@@ -279,7 +289,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot-MySQL-MyBatis"><span class="toc-text">Spring-boot + MySQL + MyBatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个user表"><span class="toc-text">创建一个user表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建Spring-Boot框架"><span class="toc-text">搭建Spring Boot框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pox-xml中添加如下依赖，注意自己的MySQL版本"><span class="toc-text">pox.xml中添加如下依赖，注意自己的MySQL版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-resources-application-properties中添加下列语句连接–数据库"><span class="toc-text">在 resources&#x2F;application.properties中添加下列语句连接–数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码来了"><span class="toc-text">源码来了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><span class="toc-text">分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实体类"><span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapper接口"><span class="toc-text">mapper接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller类"><span class="toc-text">Controller类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试阶段"><span class="toc-text">测试阶段</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot-MySQL-MyBatis"><span class="toc-text">Spring-boot + MySQL + MyBatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个user表"><span class="toc-text">创建一个user表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建Spring-Boot框架"><span class="toc-text">搭建Spring Boot框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pox-xml中添加如下依赖，注意自己的MySQL版本"><span class="toc-text">pox.xml中添加如下依赖，注意自己的MySQL版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-resources-application-properties中添加下列语句连接–数据库"><span class="toc-text">在 resources&#x2F;application.properties中添加下列语句连接–数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码来了"><span class="toc-text">源码来了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><span class="toc-text">分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实体类"><span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapper接口"><span class="toc-text">mapper接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller类"><span class="toc-text">Controller类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试阶段"><span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别忘了打赏哟"><span class="toc-text">别忘了打赏哟</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -324,7 +334,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.entity;</span><br><span class="line"></span><br><span class="line">public class User &#123;</span><br><span class="line">  		private int id;</span><br><span class="line">   	private String name;</span><br><span class="line">   	private String gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>右键-Generate…-Getter and Setter 或 Alt+Insert+Getter and Setter，全都选上点击OK。<br><img src="%E8%87%AA%E5%8A%A8GetSet1.png" alt=""><br><img src="%E8%87%AA%E5%8A%A8GetSet2.png" alt=""></p>
+<p>右键-Generate…-Getter and Setter 或 Alt+Insert+Getter and Setter，全都选上点击OK。<br><img src="%E8%87%AA%E5%8A%A8GetSet1.png" alt="">   <img src="%E8%87%AA%E5%8A%A8GetSet2.png" alt=""></p>
 <h4 id="mapper接口"><a href="#mapper接口" class="headerlink" title="mapper接口"></a>mapper接口</h4><ul>
 <li>新建一个mapper包，在这个包中新建一个UserMapper接口。具体代码如下：</li>
 </ul>
@@ -346,6 +356,7 @@
 <li>删除数据  ： localhost:8081/delete?id=1<br><img src="%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png" alt=""></li>
 <li>修改数据  ：   localhost:8081/update?id=4&amp;name=小磊真帅&amp;gender=男<br><img src="%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png" alt=""></li>
 </ul>
+<h4 id="别忘了打赏哟"><a href="#别忘了打赏哟" class="headerlink" title="别忘了打赏哟"></a>别忘了打赏哟</h4><p><img src="%E6%90%9E%E7%AC%91.png" alt=""></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
@@ -363,7 +374,7 @@
     
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
     <p><span class="copy-title">发布时间:</span>2020-03-28, 21:18:59</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-29, 01:49:18</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-29, 01:56:17</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/" title="Spring-boot + MySQL + MyBatis">https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
