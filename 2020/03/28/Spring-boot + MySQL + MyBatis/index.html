@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spring-boot + MySQL + MyBatis | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Spring-boot + MySQL + MyBatis | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="小磊一文玩转Github前期准备 Git安装 Github的注册工作相对来说比较简单，这里就不一一阐述了克隆操作 有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击Git Bash Here，输入命令git clone 仓库地址即可 这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小磊一文玩转Github">
+<meta property="og:url" content="https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="小磊一文玩转Github前期准备 Git安装 Github的注册工作相对来说比较简单，这里就不一一阐述了克隆操作 有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击Git Bash Here，输入命令git clone 仓库地址即可 这">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-05T07:30:40.826Z">
+<meta property="article:modified_time" content="2020-03-05T09:09:42.668Z">
+<meta property="article:author" content="南邮石磊">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>南邮石磊</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/Southpost" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://www.weibo.com/mygroups?gid=4339738099899811&amp;wvr=6&amp;leftnav=1&amp;isspecialgroup=1" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:2113232982@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="QQ" href="2113132982" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-QQ"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=1833211190" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="https://github.com/Southpost">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="4">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://creator.douyin.com/authority">抖音记录美好生活</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/02/18/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo搭建个人博客">Hexo搭建个人博客</span>
+            <span class="post-date" title="2020-02-18 17:17:27">2020/02/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="小磊一文玩转Github">小磊一文玩转Github</span>
+            <span class="post-date" title="2020-03-05 15:30:40">2020/03/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/21/Spring%20boot%E5%88%9D%E5%AD%A6%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring boot初学一步到位">Spring boot初学一步到位</span>
+            <span class="post-date" title="2020-03-21 13:28:57">2020/03/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring-boot + MySQL + MyBatis">Spring-boot + MySQL + MyBatis</span>
+            <span class="post-date" title="2020-03-28 21:18:59">2020/03/28</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-Spring-boot + MySQL + MyBatis" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Spring-boot + MySQL + MyBatis</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-29 01:49:18'>2020-03-28 21:18</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot-MySQL-MyBatis"><span class="toc-text">Spring-boot + MySQL + MyBatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个user表"><span class="toc-text">创建一个user表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建Spring-Boot框架"><span class="toc-text">搭建Spring Boot框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pox-xml中添加如下依赖，注意自己的MySQL版本"><span class="toc-text">pox.xml中添加如下依赖，注意自己的MySQL版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-resources-application-properties中添加下列语句连接–数据库"><span class="toc-text">在 resources&#x2F;application.properties中添加下列语句连接–数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码来了"><span class="toc-text">源码来了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><span class="toc-text">分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实体类"><span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapper接口"><span class="toc-text">mapper接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller类"><span class="toc-text">Controller类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试阶段"><span class="toc-text">测试阶段</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-boot-MySQL-MyBatis"><a href="#Spring-boot-MySQL-MyBatis" class="headerlink" title="Spring-boot + MySQL + MyBatis"></a>Spring-boot + MySQL + MyBatis</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>IntelliJ IDEA旗舰版2019.1.4</li>
+<li>MySQL 8.0.12</li>
+</ul>
+<h2 id="创建一个user表"><a href="#创建一个user表" class="headerlink" title="创建一个user表"></a>创建一个user表</h2><ul>
+<li>在数据库demo中创建一个user表，包含字段id，name，gender<br>数据库的基本知识可查看：<a href="https://www.bilibili.com/video/av94010978?p=14" target="_blank" rel="noopener">小磊福利</a></li>
+<li>命令如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create database if not exists demo character set utf8;</span><br><span class="line">use demo;</span><br><span class="line">create table user(id int,name varchar(20),gender varchar(1));</span><br><span class="line">insert into user(id,name,gender) values(01,&#39;张三&#39;,&#39;男&#39;);</span><br><span class="line">insert into user(id,name,gender) values(02,&#39;李四&#39;,&#39;女&#39;);</span><br><span class="line">insert into user(id,name,gender) values(03,&#39;王五&#39;,&#39;男&#39;);</span><br><span class="line">select id,name,gender from user;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>返回如下信息：<br><img src="mysql.png" alt=""></li>
+</ul>
+<h2 id="搭建Spring-Boot框架"><a href="#搭建Spring-Boot框架" class="headerlink" title="搭建Spring Boot框架"></a>搭建Spring Boot框架</h2><h3 id="pox-xml中添加如下依赖，注意自己的MySQL版本"><a href="#pox-xml中添加如下依赖，注意自己的MySQL版本" class="headerlink" title="pox.xml中添加如下依赖，注意自己的MySQL版本"></a>pox.xml中添加如下依赖，注意自己的MySQL版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 添加 MyBatis --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  		&lt;groupId&gt;org.mybatis.spring.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">  		&lt;artifactId&gt;mybatis-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">       &lt;!-- 注意官网的更新，旧版也不是不可以 --&gt;</span><br><span class="line">  		&lt;version&gt;1.3.2&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"> &lt;!-- 添加 MySQL --&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">	&lt;!-- 我的版本是8.0.12 --&gt;</span><br><span class="line">       &lt;version&gt;8.0.12&lt;&#x2F;version&gt;</span><br><span class="line">   &lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-resources-application-properties中添加下列语句连接–数据库"><a href="#在-resources-application-properties中添加下列语句连接–数据库" class="headerlink" title="在 resources/application.properties中添加下列语句连接–数据库"></a>在 resources/application.properties中添加下列语句连接–数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;demo?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai</span><br><span class="line">spring.datasource.username&#x3D;root</span><br><span class="line">spring.datasource.password&#x3D;root</span><br><span class="line">spring.datasource.driver-class-name&#x3D;com.mysql.cj.jdbc.Driver</span><br><span class="line">mybatis.type-aliases-package&#x3D;com.example.demo.mapper</span><br><span class="line">server.port&#x3D;8081</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>spring.datasource.url数据库连接字符串，3306是MySQL的默认端口，demo是表所在的数据库，后面的参数直接复制即可，之前有个时区参数忘记加上去总是报错</li>
+<li>spring.datasource.username：数据库用户名</li>
+<li>spring.datasource.password：用户名密码</li>
+<li>spring.datasource.driver-class-name 驱动类型</li>
+<li>mybatis.type-aliases-package 配置mapper包名</li>
+</ul>
+<h3 id="源码来了"><a href="#源码来了" class="headerlink" title="源码来了"></a>源码来了</h3><h4 id="分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><a href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。" class="headerlink" title="分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"></a>分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</h4><h4 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h4><ul>
+<li>新建一个entity包，在里面新建一个User类</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.entity;</span><br><span class="line"></span><br><span class="line">public class User &#123;</span><br><span class="line">  		private int id;</span><br><span class="line">   	private String name;</span><br><span class="line">   	private String gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>右键-Generate…-Getter and Setter 或 Alt+Insert+Getter and Setter，全都选上点击OK。<br><img src="%E8%87%AA%E5%8A%A8GetSet1.png" alt=""><br><img src="%E8%87%AA%E5%8A%A8GetSet2.png" alt=""></p>
+<h4 id="mapper接口"><a href="#mapper接口" class="headerlink" title="mapper接口"></a>mapper接口</h4><ul>
+<li>新建一个mapper包，在这个包中新建一个UserMapper接口。具体代码如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.mapper;</span><br><span class="line">import com.example.demo.entity.User;</span><br><span class="line">import org.apache.ibatis.annotations.*;</span><br><span class="line">import org.springframework.stereotype.Repository;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Repository</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">    @Select(&quot;SELECT * FROM user&quot;)</span><br><span class="line">    @Results(&#123;</span><br><span class="line">            @Result(property &#x3D; &quot;name&quot;, column &#x3D; &quot;name&quot;)</span><br><span class="line">    &#125;)</span><br><span class="line">    List&lt;User&gt; getAll();</span><br><span class="line">    @Select(&quot;select * from user where id&#x3D;#&#123;id&#125;&quot;)</span><br><span class="line">    User getById(int id);</span><br><span class="line">    @Insert(&#123;&quot;insert into user(id,name,gender) values(#&#123;id&#125;,#&#123;name&#125;,#&#123;gender&#125;)&quot;&#125;)</span><br><span class="line">    void install(User user);</span><br><span class="line">    @Update(&#123;&quot;update user set name&#x3D;#&#123;name&#125;,gender&#x3D;#&#123;gender&#125; where id&#x3D;#&#123;id&#125;&quot;&#125;)</span><br><span class="line">    void Update(User user);</span><br><span class="line">    @Delete(&quot;delete from user where id&#x3D;#&#123;id&#125;&quot;)</span><br><span class="line">    void delete(int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@Select查询注解</li>
+<li>@Results结果集标识，用来对应数据库列名，如果实体类属性和数据库属性名保持一致，可以   忽略此参数</li>
+<li>@Insert插入注解</li>
+<li>@Update修改注解</li>
+<li>@Delete删除注解<br>完成上述操作后，在主程序入口添加@Mapper(‘com.example.demo.mapper’)。</li>
+</ul>
+<h4 id="Controller类"><a href="#Controller类" class="headerlink" title="Controller类"></a>Controller类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.web;</span><br><span class="line">import com.example.demo.entity.User;</span><br><span class="line">import com.example.demo.mapper.UserMapper;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class UserController &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;getAll&quot;)</span><br><span class="line">    public List&lt;User&gt; getAll()&#123;</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;install&quot;)</span><br><span class="line">    public List&lt;User&gt; install(User user)&#123;</span><br><span class="line">        userMapper.install(user);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;delete&quot;)</span><br><span class="line">    public List&lt;User&gt; delete(int id)&#123;</span><br><span class="line">        userMapper.delete(id);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;update&quot;)</span><br><span class="line">    public List&lt;User&gt; update(User user)&#123;</span><br><span class="line">        userMapper.Update(user);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;get&quot;)</span><br><span class="line">    public User get(int id)&#123;</span><br><span class="line">        return userMapper.getById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h4><ul>
+<li>查询所有数据   ：localhost:8081/getAll<br><img src="%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89.png" alt=""></li>
+<li>查询单挑记录  ： localhost:8081/get?id=3<br><img src="%E6%9F%A5%E8%AF%A2%E5%8D%95%E6%9D%A1%E8%AE%B0%E5%BD%95.png" alt=""></li>
+<li>增加数据  ： localhost:8081/install?id=4&amp;name=石磊&amp;gender=男<br><img src="%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE.png" alt=""></li>
+<li>删除数据  ： localhost:8081/delete?id=1<br><img src="%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png" alt=""></li>
+<li>修改数据  ：   localhost:8081/update?id=4&amp;name=小磊真帅&amp;gender=男<br><img src="%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png" alt=""></li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Spring-boot + MySQL + MyBatis</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-03-28, 21:18:59</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-29, 01:49:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/" title="Spring-boot + MySQL + MyBatis">https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 SLTAL</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
