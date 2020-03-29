@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Spring-boot + MySQL + MyBatis | Hexo</title>
+  <title>MySQL学习—基本操作 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Spring-boot + MySQL + MyBatis | Hexo">
+  <meta name="description" content="MySQL学习—基本操作 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Spring-boot + MySQL + MyBatis准备工作 IntelliJ IDEA旗舰版2019.1.4 MySQL 8.0.12  创建一个user表 在数据库demo中创建一个user表，包含字段id，name，gender数据库的基本知识可查看：小磊福利 命令如下：  1234567create database if not exists demo character set">
 <meta property="og:type" content="article">
@@ -263,9 +263,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Spring-boot + MySQL + MyBatis" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL学习—基本操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Spring-boot + MySQL + MyBatis</h1>
+        <h1 class="article-title">MySQL学习—基本操作</h1>
     
     <div class="article-meta">
         
@@ -275,7 +275,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-29 01:57:34'>2020-03-28 21:18</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-29 10:58:30'>2020-03-29 10:58</time>
         
     </div>
     <div class="article-meta">
@@ -297,7 +297,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot-MySQL-MyBatis"><span class="toc-text">Spring-boot + MySQL + MyBatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个user表"><span class="toc-text">创建一个user表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建Spring-Boot框架"><span class="toc-text">搭建Spring Boot框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pox-xml中添加如下依赖，注意自己的MySQL版本"><span class="toc-text">pox.xml中添加如下依赖，注意自己的MySQL版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-resources-application-properties中添加下列语句连接–数据库"><span class="toc-text">在 resources&#x2F;application.properties中添加下列语句连接–数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码来了"><span class="toc-text">源码来了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><span class="toc-text">分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实体类"><span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mapper接口"><span class="toc-text">Mapper接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller类"><span class="toc-text">Controller类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试阶段"><span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别忘了打赏哟"><span class="toc-text">别忘了打赏哟</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL学习—基本操作"><span class="toc-text">MySQL学习—基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录"><span class="toc-text">登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示数据库"><span class="toc-text">展示数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建数据库，创建数据表"><span class="toc-text">创建数据库，创建数据表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入数据"><span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改数据"><span class="toc-text">修改数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#删除数据"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找数据"><span class="toc-text">查找数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加演示-不是本例"><span class="toc-text">附加演示(不是本例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#别忘了打赏哈"><span class="toc-text">别忘了打赏哈</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -313,58 +313,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Spring-boot-MySQL-MyBatis"><a href="#Spring-boot-MySQL-MyBatis" class="headerlink" title="Spring-boot + MySQL + MyBatis"></a>Spring-boot + MySQL + MyBatis</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>IntelliJ IDEA旗舰版2019.1.4</li>
-<li>MySQL 8.0.12</li>
+        <h1 id="MySQL学习—基本操作"><a href="#MySQL学习—基本操作" class="headerlink" title="MySQL学习—基本操作"></a>MySQL学习—基本操作</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>小磊这里用的是<a href="https://www.xp.cn/download.html" target="_blank" rel="noopener">phpstudy</a>，它自带MySQL（这里有两个版本），可以安装到本机。</li>
 </ul>
-<h2 id="创建一个user表"><a href="#创建一个user表" class="headerlink" title="创建一个user表"></a>创建一个user表</h2><ul>
-<li>在数据库demo中创建一个user表，包含字段id，name，gender<br>数据库的基本知识可查看：<a href="https://www.bilibili.com/video/av94010978?p=14" target="_blank" rel="noopener">小磊福利</a></li>
-<li>命令如下：</li>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
+<li>如果安装时选择全局可见，则直接利用命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+然后输入：密码（一般都为root），前提保证phpstudy中的MYSQL启动。<br><img src="%E5%90%AF%E5%8A%A8.png" alt=""><br><img src="%E7%99%BB%E5%BD%95.png" alt=""></li>
+<li>如果不是全局可见，需要找到MySQL文件夹，d到bin目录，mysql -uroot -p，输入密码。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create database if not exists demo character set utf8;</span><br><span class="line">use demo;</span><br><span class="line">create table user(id int,name varchar(20),gender varchar(1));</span><br><span class="line">insert into user(id,name,gender) values(01,&#39;张三&#39;,&#39;男&#39;);</span><br><span class="line">insert into user(id,name,gender) values(02,&#39;李四&#39;,&#39;女&#39;);</span><br><span class="line">insert into user(id,name,gender) values(03,&#39;王五&#39;,&#39;男&#39;);</span><br><span class="line">select id,name,gender from user;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>返回如下信息：<br><img src="mysql.png" alt=""></li>
+<h2 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+<p><img src="%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt=""></p>
+<h2 id="创建数据库，创建数据表"><a href="#创建数据库，创建数据表" class="headerlink" title="创建数据库，创建数据表"></a>创建数据库，创建数据表</h2><ul>
+<li>数据库demo2，数据表person，字段id，name，gender<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database demo2;</span><br></pre></td></tr></table></figure>
+<img src="%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt=""></li>
 </ul>
-<h2 id="搭建Spring-Boot框架"><a href="#搭建Spring-Boot框架" class="headerlink" title="搭建Spring Boot框架"></a>搭建Spring Boot框架</h2><h3 id="pox-xml中添加如下依赖，注意自己的MySQL版本"><a href="#pox-xml中添加如下依赖，注意自己的MySQL版本" class="headerlink" title="pox.xml中添加如下依赖，注意自己的MySQL版本"></a>pox.xml中添加如下依赖，注意自己的MySQL版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 添加 MyBatis --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  		&lt;groupId&gt;org.mybatis.spring.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">  		&lt;artifactId&gt;mybatis-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">       &lt;!-- 注意官网的更新，旧版也不是不可以 --&gt;</span><br><span class="line">  		&lt;version&gt;1.3.2&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"> &lt;!-- 添加 MySQL --&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">	&lt;!-- 我的版本是8.0.12 --&gt;</span><br><span class="line">       &lt;version&gt;8.0.12&lt;&#x2F;version&gt;</span><br><span class="line">   &lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在-resources-application-properties中添加下列语句连接–数据库"><a href="#在-resources-application-properties中添加下列语句连接–数据库" class="headerlink" title="在 resources/application.properties中添加下列语句连接–数据库"></a>在 resources/application.properties中添加下列语句连接–数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;demo?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai</span><br><span class="line">spring.datasource.username&#x3D;root</span><br><span class="line">spring.datasource.password&#x3D;root</span><br><span class="line">spring.datasource.driver-class-name&#x3D;com.mysql.cj.jdbc.Driver</span><br><span class="line">mybatis.type-aliases-package&#x3D;com.example.demo.mapper</span><br><span class="line">server.port&#x3D;8081</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>spring.datasource.url数据库连接字符串，3306是MySQL的默认端口，demo是表所在的数据库，后面的参数直接复制即可，之前有个时区参数忘记加上去总是报错</li>
-<li>spring.datasource.username：数据库用户名</li>
-<li>spring.datasource.password：用户名密码</li>
-<li>spring.datasource.driver-class-name 驱动类型</li>
-<li>mybatis.type-aliases-package 配置mapper包名</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table person(id int,name varchar(10),gender varchar(1));</span><br></pre></td></tr></table></figure>
+<p><img src="%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8" alt=""></p>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into person(id,name,gender) values(01,&#39;张三&#39;,&#39;男&#39;);</span><br><span class="line">insert into person(id,name,gender) values(02,&#39;李四&#39;,&#39;女&#39;);</span><br><span class="line">insert into person(id,name,gender) values(03,&#39;王五&#39;,&#39;男&#39;);</span><br><span class="line">select id,name,gender from person;</span><br></pre></td></tr></table></figure>
+<p><img src="%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE.png" alt=""></p>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><ul>
+<li>修改王五的id为688<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update person set id &#x3D;688 where name&#x3D;&#39;王五&#39;;</span><br><span class="line">select * from person;</span><br></pre></td></tr></table></figure>
+<img src="%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png" alt=""></li>
 </ul>
-<h3 id="源码来了"><a href="#源码来了" class="headerlink" title="源码来了"></a>源码来了</h3><h4 id="分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"><a href="#分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。" class="headerlink" title="分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。"></a>分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理。</h4><h4 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h4><ul>
-<li>新建一个entity包，在里面新建一个User类</li>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><ul>
+<li>删除id为2的数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from person where id&#x3D;2;</span><br><span class="line">select * from person;</span><br></pre></td></tr></table></figure>
+<img src="%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png" alt=""></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.entity;</span><br><span class="line"></span><br><span class="line">public class User &#123;</span><br><span class="line">  		private int id;</span><br><span class="line">   	private String name;</span><br><span class="line">   	private String gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>右键-Generate…-Getter and Setter 或 Alt+Insert+Getter and Setter，全都选上点击OK。<br><img src="%E8%87%AA%E5%8A%A8GetSet1.png" alt="">   <img src="%E8%87%AA%E5%8A%A8GetSet2.png" alt=""></p>
-<h4 id="Mapper接口"><a href="#Mapper接口" class="headerlink" title="Mapper接口"></a>Mapper接口</h4><ul>
-<li>新建一个mapper包，在这个包中新建一个UserMapper接口。具体代码如下：</li>
+<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ul>
+<li>条件查询<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person where name &#x3D;&#39;张三&#39;;</span><br></pre></td></tr></table></figure>
+<img src="%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2.png" alt=""></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.mapper;</span><br><span class="line">import com.example.demo.entity.User;</span><br><span class="line">import org.apache.ibatis.annotations.*;</span><br><span class="line">import org.springframework.stereotype.Repository;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Repository</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">    @Select(&quot;SELECT * FROM user&quot;)</span><br><span class="line">    @Results(&#123;</span><br><span class="line">            @Result(property &#x3D; &quot;name&quot;, column &#x3D; &quot;name&quot;)</span><br><span class="line">    &#125;)</span><br><span class="line">    List&lt;User&gt; getAll();</span><br><span class="line">    @Select(&quot;select * from user where id&#x3D;#&#123;id&#125;&quot;)</span><br><span class="line">    User getById(int id);</span><br><span class="line">    @Insert(&#123;&quot;insert into user(id,name,gender) values(#&#123;id&#125;,#&#123;name&#125;,#&#123;gender&#125;)&quot;&#125;)</span><br><span class="line">    void install(User user);</span><br><span class="line">    @Update(&#123;&quot;update user set name&#x3D;#&#123;name&#125;,gender&#x3D;#&#123;gender&#125; where id&#x3D;#&#123;id&#125;&quot;&#125;)</span><br><span class="line">    void Update(User user);</span><br><span class="line">    @Delete(&quot;delete from user where id&#x3D;#&#123;id&#125;&quot;)</span><br><span class="line">    void delete(int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>@Select查询注解</li>
-<li>@Results结果集标识，用来对应数据库列名，如果实体类属性和数据库属性名保持一致，可以   忽略此参数</li>
-<li>@Insert插入注解</li>
-<li>@Update修改注解</li>
-<li>@Delete删除注解<br>完成上述操作后，在主程序入口添加@Mapper(‘com.example.demo.mapper’)。</li>
+<h3 id="附加演示-不是本例"><a href="#附加演示-不是本例" class="headerlink" title="附加演示(不是本例)"></a>附加演示(不是本例)</h3><ul>
+<li>查找后2行数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person limit 1,2;</span><br></pre></td></tr></table></figure>
+<img src="%E9%99%84%E5%8A%A01.png" alt=""></li>
+<li>按照name升序展示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person order by name asc;</span><br></pre></td></tr></table></figure>
+<img src="%E9%99%84%E5%8A%A02.png" alt=""></li>
+<li>按照name降序显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person order by name desc;</span><br></pre></td></tr></table></figure>
+<img src="%E9%99%84%E5%8A%A03.png" alt=""></li>
 </ul>
-<h4 id="Controller类"><a href="#Controller类" class="headerlink" title="Controller类"></a>Controller类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.example.demo.web;</span><br><span class="line">import com.example.demo.entity.User;</span><br><span class="line">import com.example.demo.mapper.UserMapper;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class UserController &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;getAll&quot;)</span><br><span class="line">    public List&lt;User&gt; getAll()&#123;</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;install&quot;)</span><br><span class="line">    public List&lt;User&gt; install(User user)&#123;</span><br><span class="line">        userMapper.install(user);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;delete&quot;)</span><br><span class="line">    public List&lt;User&gt; delete(int id)&#123;</span><br><span class="line">        userMapper.delete(id);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;update&quot;)</span><br><span class="line">    public List&lt;User&gt; update(User user)&#123;</span><br><span class="line">        userMapper.Update(user);</span><br><span class="line">        return userMapper.getAll();</span><br><span class="line">    &#125;</span><br><span class="line">    @GetMapping(&quot;&#x2F;get&quot;)</span><br><span class="line">    public User get(int id)&#123;</span><br><span class="line">        return userMapper.getById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h4><ul>
-<li>查询所有数据   ：localhost:8081/getAll<br><img src="%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89.png" alt=""></li>
-<li>查询单挑记录  ： localhost:8081/get?id=3<br><img src="%E6%9F%A5%E8%AF%A2%E5%8D%95%E6%9D%A1%E8%AE%B0%E5%BD%95.png" alt=""></li>
-<li>增加数据  ： localhost:8081/install?id=4&amp;name=石磊&amp;gender=男<br><img src="%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE.png" alt=""></li>
-<li>删除数据  ： localhost:8081/delete?id=1<br><img src="%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png" alt=""></li>
-<li>修改数据  ：   localhost:8081/update?id=4&amp;name=小磊真帅&amp;gender=男<br><img src="%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png" alt=""></li>
-</ul>
-<h4 id="别忘了打赏哟"><a href="#别忘了打赏哟" class="headerlink" title="别忘了打赏哟"></a>别忘了打赏哟</h4><p><img src="%E6%90%9E%E7%AC%91.png" alt=""></p>
+<h3 id="别忘了打赏哈"><a href="#别忘了打赏哈" class="headerlink" title="别忘了打赏哈"></a>别忘了打赏哈</h3><p><img src="%E6%89%93%E8%B5%8F.png" alt=""></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
@@ -378,12 +365,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Spring-boot + MySQL + MyBatis</p>
+    <p><span class="copy-title">文章标题:</span>MySQL学习—基本操作</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-28, 21:18:59</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-29, 01:57:34</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/" title="Spring-boot + MySQL + MyBatis">https://southpost.github.io/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/</a>
+    <p><span class="copy-title">发布时间:</span>2020-03-29, 10:58:30</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-29, 10:58:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="MySQL学习—基本操作">https://southpost.github.io/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
