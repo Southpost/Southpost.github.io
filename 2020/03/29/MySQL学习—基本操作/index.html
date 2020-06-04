@@ -6,26 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="MySQL学习—基本操作 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Git+码云配置SSH公钥一、生成公钥 1、桌面右键菜单选择Git Bash Here    2、输入命令进入.ssh文件1cd ~&#x2F;.ssh  3、输入下列命令 生成自己的公钥1ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot; 说明：这里的”xxxxx@xxxxx.com“指的是自己的邮箱 4、输入id_rsa,得到对应的id_rsa.p">
+<meta name="description" content="完美解决command not found一、背景介绍 有将近2个月没动过 Hexo 博客了，感觉有点懈怠了，刚好最近学长让我写一篇gitee初用指南，所以今天准备更新的时候输入 hexo g，报错 “node”:command not found，然后我上网查询了一下原因，我发现应该查看node.js的版本，所以我就输入了命令：node -v，结果还是不行，又输入：npm -v ，结果。。。不行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git+码云配置SSH公钥">
-<meta property="og:url" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/index.html">
+<meta property="og:title" content="完美解决command not found">
+<meta property="og:url" content="https://southpost.github.io/2020/06/04/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3command%20not%20found/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Git+码云配置SSH公钥一、生成公钥 1、桌面右键菜单选择Git Bash Here    2、输入命令进入.ssh文件1cd ~&#x2F;.ssh  3、输入下列命令 生成自己的公钥1ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot; 说明：这里的”xxxxx@xxxxx.com“指的是自己的邮箱 4、输入id_rsa,得到对应的id_rsa.p">
+<meta property="og:description" content="完美解决command not found一、背景介绍 有将近2个月没动过 Hexo 博客了，感觉有点懈怠了，刚好最近学长让我写一篇gitee初用指南，所以今天准备更新的时候输入 hexo g，报错 “node”:command not found，然后我上网查询了一下原因，我发现应该查看node.js的版本，所以我就输入了命令：node -v，结果还是不行，又输入：npm -v ，结果。。。不行">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/1.jpg">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/2.jpg">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/3.png">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/4.jpg">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/6.jpg">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/7.jpg">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/8.png">
-<meta property="og:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/9.jpg">
-<meta property="article:published_time" content="2020-06-04T03:55:40.966Z">
-<meta property="article:modified_time" content="2020-06-04T06:08:36.129Z">
+<meta property="og:image" content="https://southpost.github.io/2020/06/04/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3command%20not%20found/%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.jpg">
+<meta property="og:image" content="https://southpost.github.io/2020/06/04/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3command%20not%20found/%E6%A3%80%E6%9F%A5npm.png">
+<meta property="article:published_time" content="2020-06-04T06:21:48.786Z">
+<meta property="article:modified_time" content="2020-06-04T06:42:23.667Z">
 <meta property="article:author" content="南邮石磊">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/1.jpg">
+<meta name="twitter:image" content="https://southpost.github.io/2020/06/04/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3command%20not%20found/%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.jpg">
 
 
 <link rel="icon" href="/img/avatar.jpg">
