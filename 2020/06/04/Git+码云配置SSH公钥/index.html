@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
+  <title>Git+码云配置SSH公钥 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <meta name="description" content="Git+码云配置SSH公钥 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="MySQL学习—基本操作安装 小磊这里用的是phpstudy，它自带MySQL（这里有两个版本），可以安装到本机。  登录 如果安装时选择全局可见，则直接利用命令： 1mysql -uroot -p 然后输入：密码（一般都为root），前提保证phpstudy中的MYSQL启动。  如果不是全局可见，需要找到MySQL文件夹，d到bin目录，mysql -uroot -p，输入密码。   展示数据">
 <meta property="og:type" content="article">
@@ -66,7 +66,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -281,12 +281,43 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Git+码云配置SSH公钥" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What-Blog"><span class="toc-text">What Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于南邮石磊"><span class="toc-text">关于南邮石磊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">Git+码云配置SSH公钥</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-04 12:04:35'>2020-06-04 11:55</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-码云配置SSH公钥"><span class="toc-text">Git+码云配置SSH公钥</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、生成公钥"><span class="toc-text">一、生成公钥</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -299,36 +330,63 @@
     }
 </style>
 </div>
-            <h1 id="What-Blog"><a href="#What-Blog" class="headerlink" title="What Blog"></a>What Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于南邮石磊"><a href="#关于南邮石磊" class="headerlink" title="关于南邮石磊"></a>关于南邮石磊</h2><p><strong>石磊</strong> 是南京邮电大学的一名普通学生</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-码云配置SSH公钥"><a href="#Git-码云配置SSH公钥" class="headerlink" title="Git+码云配置SSH公钥"></a>Git+码云配置SSH公钥</h1><h2 id="一、生成公钥"><a href="#一、生成公钥" class="headerlink" title="一、生成公钥"></a>一、生成公钥</h2><ul>
+<li>1、桌面右键菜单选择Git Bash Here</li>
 </ul>
+<p><img src="1.jpg" alt=""></p>
+<ul>
+<li>2、输入命令进入.ssh文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span><br></pre></td></tr></table></figure>
+<img src="2.jpg" alt=""></li>
+<li>3、输入下列命令 生成自己的公钥<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;</span><br></pre></td></tr></table></figure>
+说明：这里的”<a href="mailto:xxxxx@xxxxx.com">xxxxx@xxxxx.com</a>“指的是自己的邮箱</li>
+<li>4、输入id_rsa,得到对应的id_rsa.pub文件<br>为了让大家理解的更清晰，下图的例子可做对比。</li>
+</ul>
+<p><img src="3.png" alt=""></p>
+<p>注意：这里的Demo一律改为id_rsa,本人亲测，这里必须是这样，不能自己更改文件名！！！</p>
+<ul>
+<li>5、通过这个命令可以查看生成的公钥<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> ls</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">![](4.jpg)</span><br><span class="line">如果生成这三个文件，代表离成功不远了。</span><br><span class="line">* 6、输入命令，打开生成的公钥</span><br></pre></td></tr></table></figure>
+cat id_rsa.pub<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![](6.jpg)</span><br><span class="line"></span><br><span class="line">## 二、码云配置公钥</span><br><span class="line">* 1、复制公钥，登录码云打开设置-安全设置-SSH公钥</span><br></pre></td></tr></table></figure>
+<a href="https://gitee.com/" target="_blank" rel="noopener">登录码云</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![](7.jpg)</span><br><span class="line"></span><br><span class="line">* 2、权限验证</span><br><span class="line"></span><br><span class="line">![](8.png)</span><br><span class="line"></span><br><span class="line">## 三、验证公钥是否添加成功</span><br><span class="line">* 1、Git命名行工具,输入</span><br></pre></td></tr></table></figure>
+ssh -T <a href="mailto:git@gitee.com">git@gitee.com</a><pre><code></code></pre></li>
+</ul>
+<p><img src="9.jpg" alt=""></p>
+<p>注意：如果出现这样的提示表示已经大功告成了。</p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Git+码云配置SSH公钥</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-04, 11:55:40</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-04, 12:04:35</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/" title="Git+码云配置SSH公钥">https://southpost.github.io/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2019-2020 SLTAL</p>
