@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小磊一文玩转Github | Hexo</title>
+  <title>jQuery练习_新浪微博 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="小磊一文玩转Github | Hexo">
+  <meta name="description" content="jQuery练习_新浪微博 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery练习_新浪微博">
@@ -387,9 +387,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-小磊一文玩转Github" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jQuery练习_新浪微博" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小磊一文玩转Github</h1>
+        <h1 class="article-title">jQuery练习_新浪微博</h1>
     
     <div class="article-meta">
         
@@ -399,7 +399,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-05 17:09:42'>2020-03-05 15:30</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-24 00:59:58'>2020-07-24 00:59</time>
         
     </div>
     <div class="article-meta">
@@ -421,7 +421,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小磊一文玩转Github"><span class="toc-text">小磊一文玩转Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#克隆操作"><span class="toc-text">克隆操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将本地项目推送到GitHub"><span class="toc-text">将本地项目推送到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决冲突"><span class="toc-text">如何解决冲突</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -437,23 +437,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="小磊一文玩转Github"><a href="#小磊一文玩转Github" class="headerlink" title="小磊一文玩转Github"></a>小磊一文玩转Github</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git安装</a></li>
-<li>Github的注册工作相对来说比较简单，这里就不一一阐述了<h2 id="克隆操作"><a href="#克隆操作" class="headerlink" title="克隆操作"></a>克隆操作</h2></li>
-<li>有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击<strong>Git Bash Here</strong>，输入命令<strong>git clone 仓库地址</strong>即可</li>
-<li>这里注意SSH创建密匙的操作。<h2 id="将本地项目推送到GitHub"><a href="#将本地项目推送到GitHub" class="headerlink" title="将本地项目推送到GitHub"></a>将本地项目推送到GitHub</h2></li>
-<li>先到暂存区（index），输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure>
-如果在当前目录，则利用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></li>
-<li>推送，输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;查看&quot;</span><br></pre></td></tr></table></figure></li>
-<li>提交命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2></li>
-<li>可以利用<strong>git status</strong>命令查看当期状态；<strong>初次使用会有邮箱问题，请注意</strong> </li>
-<li>查看日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></li>
-<li>清空当前面板<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cls</span><br></pre></td></tr></table></figure>
-<h2 id="如何解决冲突"><a href="#如何解决冲突" class="headerlink" title="如何解决冲突"></a>如何解决冲突</h2></li>
-<li>多人修改一个文件时，会有冲突的产生。在push之前，输入<strong>git pull</strong>,然后回到当前文件夹，将自己和别人写的有效的东西进行合并，删除无用的东西，执行提交操作</li>
-</ul>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
     </div>
@@ -466,12 +450,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>小磊一文玩转Github</p>
+    <p><span class="copy-title">文章标题:</span>jQuery练习_新浪微博</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-05, 15:30:40</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-05, 17:09:42</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/" title="小磊一文玩转Github">https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-24, 00:59:58</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-24, 00:59:58</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/jQuery%E7%BB%83%E4%B9%A0_%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A/" title="jQuery练习_新浪微博">https://southpost.github.io/2020/07/24/jQuery%E7%BB%83%E4%B9%A0_%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
