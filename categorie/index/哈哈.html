@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="删除排序数组中的重复项12  买卖股票的最佳时机 II">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法初级—数组">
+<meta property="og:url" content="https://southpost.github.io/2020/08/04/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E2%80%94%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="删除排序数组中的重复项12  买卖股票的最佳时机 II">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-04T14:18:57.122Z">
+<meta property="article:modified_time" content="2020-08-04T14:29:11.006Z">
+<meta property="article:author" content="南邮石磊">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>南邮石磊</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/Southpost" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://www.weibo.com/mygroups?gid=4339738099899811&amp;wvr=6&amp;leftnav=1&amp;isspecialgroup=1" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:2113232982@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="QQ" href="2113132982" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-QQ"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=1833211190" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(25)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="https://github.com/Southpost">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="25">
+<input type="hidden" id="yelog_site_word_count" value="17.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://creator.douyin.com/authority">抖音记录美好生活</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/02/18/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo搭建个人博客">Hexo搭建个人博客</span>
+            <span class="post-date" title="2020-02-18 17:17:27">2020/02/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="小磊一文玩转Github">小磊一文玩转Github</span>
+            <span class="post-date" title="2020-03-05 15:30:40">2020/03/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/21/Spring%20boot%E5%88%9D%E5%AD%A6%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring boot初学一步到位">Spring boot初学一步到位</span>
+            <span class="post-date" title="2020-03-21 13:28:57">2020/03/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/28/Spring-boot%20+%20MySQL%20+%20MyBatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring-boot + MySQL + MyBatis">Spring-boot + MySQL + MyBatis</span>
+            <span class="post-date" title="2020-03-28 21:18:59">2020/03/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL学习—基本操作">MySQL学习—基本操作</span>
+            <span class="post-date" title="2020-03-29 10:58:30">2020/03/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL学习—常见命令">MySQL学习—常见命令</span>
+            <span class="post-date" title="2020-03-29 11:05:04">2020/03/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/06/04/Git+%E7%A0%81%E4%BA%91%E9%85%8D%E7%BD%AESSH%E5%85%AC%E9%92%A5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git+码云配置SSH公钥">Git+码云配置SSH公钥</span>
+            <span class="post-date" title="2020-06-04 11:55:40">2020/06/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/06/04/%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3command%20not%20found/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="完美解决command not found">完美解决command not found</span>
+            <span class="post-date" title="2020-06-04 14:21:48">2020/06/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/08/%E5%88%9D%E8%AF%86jQuery/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="初识jQuery">初识jQuery</span>
+            <span class="post-date" title="2020-07-08 01:50:37">2020/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/14/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery选择器">jQuery选择器</span>
+            <span class="post-date" title="2020-07-14 15:38:42">2020/07/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/13/jQuery%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery静态方法">jQuery静态方法</span>
+            <span class="post-date" title="2020-07-13 13:18:15">2020/07/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/14/jQuery%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery相关操作">jQuery相关操作</span>
+            <span class="post-date" title="2020-07-14 16:32:04">2020/07/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/21/jQuery%E7%BB%83%E4%B9%A0_%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery练习_电影排行榜">jQuery练习_电影排行榜</span>
+            <span class="post-date" title="2020-07-21 00:12:02">2020/07/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/16/jQuery%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery事件处理">jQuery事件处理</span>
+            <span class="post-date" title="2020-07-16 16:55:10">2020/07/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/23/jQuery%E6%98%BE%E7%A4%BA%E5%92%8C%E9%9A%90%E8%97%8F%E5%8A%A8%E7%94%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery显示和隐藏动画">jQuery显示和隐藏动画</span>
+            <span class="post-date" title="2020-07-23 23:42:24">2020/07/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/%E5%AF%B9%E8%81%94%E5%B9%BF%E5%91%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="对联广告">对联广告</span>
+            <span class="post-date" title="2020-07-24 00:07:42">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/%E5%8A%A8%E7%94%BB%E5%92%8C%E8%8F%9C%E5%8D%95%E4%B8%8B%E6%8B%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动画和菜单下拉">动画和菜单下拉</span>
+            <span class="post-date" title="2020-07-24 00:12:15">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/%E6%B7%A1%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB%E5%8F%8A%E5%B9%BF%E5%91%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="淡与自定义动画及广告">淡与自定义动画及广告</span>
+            <span class="post-date" title="2020-07-24 00:43:19">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/jQuery%E7%BB%83%E4%B9%A0_%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery练习_新浪微博">jQuery练习_新浪微博</span>
+            <span class="post-date" title="2020-07-24 00:59:58">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/22/jQuery%E7%BB%83%E4%B9%A0_Tab%E9%80%89%E9%A1%B9%E5%8D%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery练习_Tab选项卡">jQuery练习_Tab选项卡</span>
+            <span class="post-date" title="2020-07-22 18:26:09">2020/07/22</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/%E5%9B%BE%E6%A0%87%E7%89%B9%E6%95%88%E5%92%8C%E6%BB%9A%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="图标特效和滚动">图标特效和滚动</span>
+            <span class="post-date" title="2020-07-24 00:58:31">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/24/jQuery%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86%E4%B9%8B%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery文档处理之节点操作方法">jQuery文档处理之节点操作方法</span>
+            <span class="post-date" title="2020-07-24 00:59:12">2020/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/30/jQuery%E7%BB%83%E4%B9%A0_QQ%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery练习_QQ音乐播放器">jQuery练习_QQ音乐播放器</span>
+            <span class="post-date" title="2020-07-30 20:31:47">2020/07/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/30/jQuery%E7%BB%83%E4%B9%A0_%E7%8B%82%E6%8B%8D%E7%81%B0%E5%A4%AA%E7%8B%BC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jQuery练习_狂拍灰太狼">jQuery练习_狂拍灰太狼</span>
+            <span class="post-date" title="2020-07-30 22:10:40">2020/07/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/08/04/%E7%AE%97%E6%B3%95%E5%88%9D%E7%BA%A7%E2%80%94%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="算法初级—数组">算法初级—数组</span>
+            <span class="post-date" title="2020-08-04 22:18:57">2020/08/04</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-08-06 00:09:06'>2020-08-06 00:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:0</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'eeb38f9f6852bb6534b7',
+            clientSecret: '242e198fbaba15c86355a476f7bfcf98033c7304',
+            repo: 'Southpost.github.io',
+            owner: 'Southpost',
+            admin: ['Southpost'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 SLTAL</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<div id="musicMouseDrag" style="position:fixed; z-index: 9999; bottom: 0; right: 0;">
+    <div id="musicDragArea" style="position: absolute; top: 0; left: 0; width: 100%;height: 10px;cursor: move; z-index: 10;"></div>
+   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31010566&auto=1&height=66"></iframe>
+</div>
+
+<!-- 以下代码是为了支持随时拖动音乐控件的位置，如没有需求，可去掉下面代码 -->
+<script>
+    var $DOC = $(document)
+    $('#musicMouseDrag').on ('mousedown', function (e) {
+      // 阻止文本选中
+      $DOC.bind ("selectstart", function () {
+        return false;
+      });
+      $('#musicDragArea').css ('height', '100%');
+      var $moveTarget = $('#musicMouseDrag');
+      $moveTarget.css ('border', '1px dashed grey')
+      var div_x = e.pageX - $moveTarget.offset ().left;
+      var div_y = e.pageY - $moveTarget.offset ().top;
+      $DOC.on ('mousemove', function (e) {
+        var targetX = e.pageX - div_x;
+        var targetY = e.pageY - div_y;
+        targetX = targetX < 0 ? 0 : (targetX + $moveTarget.outerWidth () >= window.innerWidth) ? window.innerWidth - $moveTarget.outerWidth () : targetX;
+        targetY = targetY < 0 ? 0 : (targetY + $moveTarget.outerHeight () >= window.innerHeight) ? window.innerHeight - $moveTarget.outerHeight () : targetY;
+        $moveTarget.css ({'left': targetX + 'px', 'top': targetY + 'px', 'bottom': 'inherit', 'right': 'inherit'})
+      }).on ('mouseup', function () {
+        $DOC.unbind ("selectstart");
+        $DOC.off ('mousemove')
+        $DOC.off ('mouseup')
+        $moveTarget.css ('border', 'none')
+        $('#musicDragArea').css ('height', '10px');
+      })
+    })
+</script>
+
+</html>
