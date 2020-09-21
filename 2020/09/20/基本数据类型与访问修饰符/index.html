@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL学习—基本操作 | Hexo</title>
+  <title>基本数据类型与访问修饰符 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="MySQL学习—基本操作 | Hexo">
+  <meta name="description" content="基本数据类型与访问修饰符 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="面向对象 Q1：面向过程和面向对象的区别？ 面向过程 因为类调用时需要实例化，开销比较大，比较消耗资源，所以性能比面向对象高；例如单片机、嵌入式开发、Linux&#x2F;Unix等一般采用面向过程开发。 由于面向对象有封装、继承、多态的特性，可以设计出耦合的系统，使系统更加灵活、易维护、易复用、易拓展。   Q2：面向对象的特性以及你对这些特性的理解？ 封装  封装是把数据和操作数据的方法绑定起来，对数据">
 <meta property="og:type" content="article">
@@ -451,9 +451,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL学习—基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-基本数据类型与访问修饰符" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL学习—基本操作</h1>
+        <h1 class="article-title">基本数据类型与访问修饰符</h1>
     
     <div class="article-meta">
         
@@ -463,12 +463,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-29 11:20:42'>2020-03-29 10:58</time>
+        创建时间:<time class="date" title='更新时间: 2020-09-21 21:46:02'>2020-09-20 15:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:319</span>
+        <span>字数:727</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -498,7 +498,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL学习—基本操作"><span class="toc-text">MySQL学习—基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录"><span class="toc-text">登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示数据库"><span class="toc-text">展示数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建数据库，创建数据表"><span class="toc-text">创建数据库，创建数据表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入数据"><span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改数据"><span class="toc-text">修改数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#删除数据"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找数据"><span class="toc-text">查找数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加演示-不是本例"><span class="toc-text">附加演示(不是本例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#别忘了打赏哈"><span class="toc-text">别忘了打赏哈</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本数据类型与访问修饰符"><span class="toc-text">基本数据类型与访问修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q1：Java的数据类型有哪些？"><span class="toc-text">Q1：Java的数据类型有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q2：访问权限修饰符-public、private、protected-以及不写（默认）时的区别？"><span class="toc-text">Q2：访问权限修饰符 public、private、protected, 以及不写（默认）时的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q3：接口和抽象类有什么区别？"><span class="toc-text">Q3：接口和抽象类有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q4：final-finally-finalize-的区别？"><span class="toc-text">Q4：final, finally, finalize 的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q5：抽象类能用final修饰吗？"><span class="toc-text">Q5：抽象类能用final修饰吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q6：为什么不能用浮点型表示金额？"><span class="toc-text">Q6：为什么不能用浮点型表示金额？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q7：int和Integer有什么区别？"><span class="toc-text">Q7：int和Integer有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q8：char型变量中能不能存储一个中文汉字，为什么？"><span class="toc-text">Q8：char型变量中能不能存储一个中文汉字，为什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#结语：每天更新（别忘打赏！！！）"><span class="toc-text">结语：每天更新（别忘打赏！！！）</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -514,49 +514,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL学习—基本操作"><a href="#MySQL学习—基本操作" class="headerlink" title="MySQL学习—基本操作"></a>MySQL学习—基本操作</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>小磊这里用的是<a href="https://www.xp.cn/download.html" target="_blank" rel="noopener">phpstudy</a>，它自带MySQL（这里有两个版本），可以安装到本机。</li>
-</ul>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
-<li><p>如果安装时选择全局可见，则直接利用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
-<p>然后输入：密码（一般都为root），前提保证phpstudy中的MYSQL启动。<br><img src="%E5%90%AF%E5%8A%A8.png" alt=""><br><img src="%E7%99%BB%E5%BD%95.png" alt=""></p>
+        <h1 id="基本数据类型与访问修饰符"><a href="#基本数据类型与访问修饰符" class="headerlink" title="基本数据类型与访问修饰符"></a>基本数据类型与访问修饰符</h1><hr>
+<h2 id="Q1：Java的数据类型有哪些？"><a href="#Q1：Java的数据类型有哪些？" class="headerlink" title="Q1：Java的数据类型有哪些？"></a>Q1：Java的数据类型有哪些？</h2><hr>
+<p><img src="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" alt=""></p>
+<hr>
+<h2 id="Q2：访问权限修饰符-public、private、protected-以及不写（默认）时的区别？"><a href="#Q2：访问权限修饰符-public、private、protected-以及不写（默认）时的区别？" class="headerlink" title="Q2：访问权限修饰符 public、private、protected, 以及不写（默认）时的区别？"></a>Q2：访问权限修饰符 public、private、protected, 以及不写（默认）时的区别？</h2><hr>
+<p><img src="%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90.png" alt=""></p>
+<hr>
+<h2 id="Q3：接口和抽象类有什么区别？"><a href="#Q3：接口和抽象类有什么区别？" class="headerlink" title="Q3：接口和抽象类有什么区别？"></a>Q3：接口和抽象类有什么区别？</h2><hr>
+<ul>
+<li><p>实现：<br>1、抽象类的子类通过extends来继承<br>2、接口必须使用implements来实现接口</p>
 </li>
-<li><p>如果不是全局可见，需要找到MySQL文件夹，d到bin目录，mysql -uroot -p，输入密码。</p>
+<li><p>构造函数<br>1、抽象类可以有构造函数<br>2、接口没有</p>
+</li>
+<li><p>main方法<br>1、抽象类有main方法，而且可以运行<br>2、接口中没有main方法</p>
+</li>
+<li><p>实现数量：类中可以实现多个接口，但只能继承一个抽象类</p>
+</li>
+<li><p>访问修饰符<br>1、接口中的方法默认使用public修饰符<br>2、抽象类的方法可以是任意访问修饰符</p>
 </li>
 </ul>
-<h2 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-<p><img src="%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt=""></p>
-<h2 id="创建数据库，创建数据表"><a href="#创建数据库，创建数据表" class="headerlink" title="创建数据库，创建数据表"></a>创建数据库，创建数据表</h2><ul>
-<li>数据库demo2，数据表person，字段id，name，gender<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database demo2;</span><br></pre></td></tr></table></figure>
-<img src="%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt=""></li>
+<hr>
+<h2 id="Q4：final-finally-finalize-的区别？"><a href="#Q4：final-finally-finalize-的区别？" class="headerlink" title="Q4：final, finally, finalize 的区别？"></a>Q4：final, finally, finalize 的区别？</h2><hr>
+<ul>
+<li>final：用于声明属性，方法和类，分别表示属性不可变，方法不可覆盖，类不可继承。</li>
+<li>finally：是异常处理语句结构的一部分，表示总是执行。</li>
+<li>finalize：是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，可以覆盖此方法提供垃圾回收时的其他资源回收，例如关闭文件等。JVM不保证此方法被调用。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table person(id int,name varchar(10),gender varchar(1));</span><br></pre></td></tr></table></figure>
-<p><img src="%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8.png" alt=""></p>
-<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into person(id,name,gender) values(01,&#39;张三&#39;,&#39;男&#39;);</span><br><span class="line">insert into person(id,name,gender) values(02,&#39;李四&#39;,&#39;女&#39;);</span><br><span class="line">insert into person(id,name,gender) values(03,&#39;王五&#39;,&#39;男&#39;);</span><br><span class="line">select id,name,gender from person;</span><br></pre></td></tr></table></figure>
-<p><img src="%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE.png" alt=""></p>
-<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><ul>
-<li>修改王五的id为688<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update person set id &#x3D;688 where name&#x3D;&#39;王五&#39;;</span><br><span class="line">select * from person;</span><br></pre></td></tr></table></figure>
-<img src="%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE.png" alt=""></li>
+<hr>
+<h2 id="Q5：抽象类能用final修饰吗？"><a href="#Q5：抽象类能用final修饰吗？" class="headerlink" title="Q5：抽象类能用final修饰吗？"></a>Q5：抽象类能用final修饰吗？</h2><hr>
+<ul>
+<li>不能。定义抽象类就是让其他类继承的，如果定义为final，该类就不能被继承，这样彼此就会产生矛盾，所以final不能修饰抽象类。</li>
 </ul>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><ul>
-<li>删除id为2的数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from person where id&#x3D;2;</span><br><span class="line">select * from person;</span><br></pre></td></tr></table></figure>
-<img src="%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE.png" alt=""></li>
+<hr>
+<h2 id="Q6：为什么不能用浮点型表示金额？"><a href="#Q6：为什么不能用浮点型表示金额？" class="headerlink" title="Q6：为什么不能用浮点型表示金额？"></a>Q6：为什么不能用浮点型表示金额？</h2><hr>
+<ul>
+<li>由于计算机中保存的小数点其实是十进制的小数的近似值，并不是准确值，所以，千万不要在代码中使用浮点数来表示金额等的重要的指标。</li>
+<li>建议使用BigDecimal或者Long（单位为分）来表示金额。</li>
 </ul>
-<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><ul>
-<li>条件查询<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person where name &#x3D;&#39;张三&#39;;</span><br></pre></td></tr></table></figure>
-<img src="%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2.png" alt=""></li>
+<hr>
+<h2 id="Q7：int和Integer有什么区别？"><a href="#Q7：int和Integer有什么区别？" class="headerlink" title="Q7：int和Integer有什么区别？"></a>Q7：int和Integer有什么区别？</h2><hr>
+<ul>
+<li>int是Java提供的8种原始数据类型之一。</li>
+<li>Java为每个原始数据类型提供了封装类，Integer是Java为int提供的封装类。</li>
+<li>int的默认值为0，而integer的默认值为null，是引用类型，即Integer可以区分出未赋值和值为0的区别，int则无法表达出未赋值的情况。</li>
+<li>Java中的int和Integer关系如下：<br>1、int是基本数据类型；<br>2、Integer是int的封装；<br>3、int和Integer都可以表示某一个数值；<br>4、int和Integer都不能互用，因为他们是两种不同的数据类型。</li>
 </ul>
-<h3 id="附加演示-不是本例"><a href="#附加演示-不是本例" class="headerlink" title="附加演示(不是本例)"></a>附加演示(不是本例)</h3><ul>
-<li>查找后2行数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person limit 1,2;</span><br></pre></td></tr></table></figure>
-<img src="%E9%99%84%E5%8A%A01.png" alt=""></li>
-<li>按照name升序展示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person order by name asc;</span><br></pre></td></tr></table></figure>
-<img src="%E9%99%84%E5%8A%A02.png" alt=""></li>
-<li>按照name降序显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from person order by name desc;</span><br></pre></td></tr></table></figure>
-<img src="%E9%99%84%E5%8A%A03.png" alt=""></li>
+<hr>
+<h2 id="Q8：char型变量中能不能存储一个中文汉字，为什么？"><a href="#Q8：char型变量中能不能存储一个中文汉字，为什么？" class="headerlink" title="Q8：char型变量中能不能存储一个中文汉字，为什么？"></a>Q8：char型变量中能不能存储一个中文汉字，为什么？</h2><hr>
+<ul>
+<li>char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。</li>
 </ul>
-<h3 id="别忘了打赏哈"><a href="#别忘了打赏哈" class="headerlink" title="别忘了打赏哈"></a>别忘了打赏哈</h3><p><img src="%E6%89%93%E8%B5%8F.png" alt=""></p>
-
+<h3 id="结语：每天更新（别忘打赏！！！）"><a href="#结语：每天更新（别忘打赏！！！）" class="headerlink" title="结语：每天更新（别忘打赏！！！）"></a>结语：每天更新（别忘打赏！！！）</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
     </div>
@@ -569,12 +578,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL学习—基本操作</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">319</span></p>
+    <p><span class="copy-title">文章标题:</span>基本数据类型与访问修饰符</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">727</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-29, 10:58:30</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-29, 11:20:42</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="MySQL学习—基本操作">https://southpost.github.io/2020/03/29/MySQL%E5%AD%A6%E4%B9%A0%E2%80%94%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</a>
+    <p><span class="copy-title">发布时间:</span>2020-09-20, 15:46:46</p>
+    <p><span class="copy-title">最后更新:</span>2020-09-21, 21:46:02</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/20/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="基本数据类型与访问修饰符">https://southpost.github.io/2020/09/20/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
