@@ -6,22 +6,24 @@
   <meta name="keywords" content="">
   <meta name="description" content="基本数据类型与访问修饰符 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="JavaSE语法 Q1：&amp;和&amp;&amp;的区别？  &amp;&amp;是短路与，因为&amp;&amp;左边的表达式是false，右边的表达式会被直接短路掉，不会进行运算。很多时候都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是null且不是空字符串，应当写为：1username!&#x3D;null&amp;&amp;!username.equals(&quot;&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两数之和">
-<meta property="og:url" content="https://southpost.github.io/2020/09/26/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
+<meta property="og:title" content="JavaSE语法">
+<meta property="og:url" content="https://southpost.github.io/2020/09/22/JavaSE%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaSE语法 Q1：&amp;和&amp;&amp;的区别？  &amp;&amp;是短路与，因为&amp;&amp;左边的表达式是false，右边的表达式会被直接短路掉，不会进行运算。很多时候都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是null且不是空字符串，应当写为：1username!&#x3D;null&amp;&amp;!username.equals(&quot;&quot;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-25T23:46:33.492Z">
-<meta property="article:modified_time" content="2020-09-26T00:23:46.807Z">
+<meta property="article:published_time" content="2020-09-22T06:35:22.297Z">
+<meta property="article:modified_time" content="2020-09-22T14:13:44.879Z">
 <meta property="article:author" content="南邮石磊">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
 
 <link rel="icon" href="/img/avatar.jpg">
 
 <link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -228,7 +230,11 @@
     <div class="friends-content">
         <ul>
             
-            <li><a target="_blank" href="https://creator.douyin.com/authority">抖音记录美好生活</a></li>
+            <li><a target="_blank" href="https://blog.csdn.net/qq_43680965">公园打野的博客</a></li>
+            
+            <li><a target="_blank" href="https://me.csdn.net/littlegoldgold">李念折的博客</a></li>
+            
+            <li><a target="_blank" href="https://me.csdn.net/njr10byh">小包的个人博客</a></li>
             
         </ul>
     </div>
@@ -740,6 +746,20 @@
 
         /*高亮代码块行号*/
         
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
 
         /*访问数量*/
         
@@ -764,6 +784,38 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
 
 <!--自定义样式设置-->
 <style>
