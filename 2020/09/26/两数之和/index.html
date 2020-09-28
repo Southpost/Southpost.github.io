@@ -6,16 +6,18 @@
   <meta name="keywords" content=" 算法 , java ">
   <meta name="description" content="两数之和 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="JavaSE语法 Q1：&amp;和&amp;&amp;的区别？  &amp;&amp;是短路与，因为&amp;&amp;左边的表达式是false，右边的表达式会被直接短路掉，不会进行运算。很多时候都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是null且不是空字符串，应当写为：1username!&#x3D;null&amp;&amp;!username.equals(&quot;&quot;">
+<meta name="description" content="两数之和 题目：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。 示例: 给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9 因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9所以返回 [0, 1]  解法一：暴力">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE语法">
-<meta property="og:url" content="https://southpost.github.io/2020/09/22/JavaSE%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:title" content="两数之和">
+<meta property="og:url" content="https://southpost.github.io/2020/09/26/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JavaSE语法 Q1：&amp;和&amp;&amp;的区别？  &amp;&amp;是短路与，因为&amp;&amp;左边的表达式是false，右边的表达式会被直接短路掉，不会进行运算。很多时候都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是null且不是空字符串，应当写为：1username!&#x3D;null&amp;&amp;!username.equals(&quot;&quot;">
+<meta property="og:description" content="两数之和 题目：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。 示例: 给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9 因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9所以返回 [0, 1]  解法一：暴力">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-22T06:35:22.297Z">
-<meta property="article:modified_time" content="2020-09-22T14:13:44.879Z">
+<meta property="article:published_time" content="2020-09-25T23:46:33.492Z">
+<meta property="article:modified_time" content="2020-09-28T09:03:49.908Z">
 <meta property="article:author" content="南邮石磊">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
 
@@ -214,7 +216,7 @@
     <div><a class="about  hasFriend  " target="_blank" href="https://github.com/Southpost">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="28">
-<input type="hidden" id="yelog_site_word_count" value="21.4k">
+<input type="hidden" id="yelog_site_word_count" value="22.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -529,12 +531,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-09-26 08:23:46'>2020-09-26 07:46</time>
+        创建时间:<time class="date" title='更新时间: 2020-09-28 17:03:49'>2020-09-26 07:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:996</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -564,7 +566,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#两数之和"><span class="toc-text">两数之和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目："><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解法一：暴力法"><span class="toc-text">解法一：暴力法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法二：两遍哈希表"><span class="toc-text">解法二：两遍哈希表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法三：一遍哈希表法"><span class="toc-text">解法三：一遍哈希表法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较说明（个人观点）"><span class="toc-text">比较说明（个人观点）</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -580,7 +582,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><hr>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p>示例:</p>
+<p>给定 nums = [2, 7, 11, 15], target = 9</p>
+<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+<hr>
+<h3 id="解法一：暴力法"><a href="#解法一：暴力法" class="headerlink" title="解法一：暴力法"></a>解法一：暴力法</h3><ul>
+<li><p>思路：通过遍历数组余下的值，是否等于target-x来判断是否有该值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间复杂度：O(n^2)<br>  对于每个元素，我们试图通过遍历数组的其余部分来寻找它所对应的目标元素，这将耗费 O(n) 的时间。因此时间复杂度为 O(n^2)。</p>
+</li>
+<li><p>空间复杂度：O(1)</p>
+</li>
+</ul>
+<h3 id="解法二：两遍哈希表"><a href="#解法二：两遍哈希表" class="headerlink" title="解法二：两遍哈希表"></a>解法二：两遍哈希表</h3><ul>
+<li><p>思路：<br>  1、为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。<br>  2、实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元（target - nums[i]target−nums[i]）是否存在于表中。注意，该目标元素不能nums[i]nums[i] 本身！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            map.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间复杂度：O(n)<br>  我们把包含有 n个元素的列表遍历两次。由于哈希表将查找时间缩短到O(1) ，所以时间复杂度为 O(n)。</p>
+</li>
+<li><p>空间复杂度：O(n)<br>  所需的额外空间取决于哈希表中存储的元素数量，该表中存储了n个元素。</p>
+</li>
+</ul>
+<h3 id="解法三：一遍哈希表法"><a href="#解法三：一遍哈希表法" class="headerlink" title="解法三：一遍哈希表法"></a>解法三：一遍哈希表法</h3><ul>
+<li><p>思路：由于可以在遍历数组的同时判断是否存在target-nums[i]，可以加一个判断。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution3"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间复杂度：O(n)<br>  我们只遍历了包含有 n 个元素的列表一次。在表中进行的每次查找只花费 O(1) 的时间。</p>
+</li>
+<li><p>空间复杂度：O(n)<br>  所需的额外空间取决于哈希表中存储的元素数量，该表最多需要存储 n 个元素。</p>
+</li>
+</ul>
+<h3 id="比较说明（个人观点）"><a href="#比较说明（个人观点）" class="headerlink" title="比较说明（个人观点）"></a>比较说明（个人观点）</h3><ul>
+<li>Map 本身会带来时间和空间上的开销，这无可否认。但我喜欢使用Map的方法，原因有二，（1）Map帮助解决了元素值和索引的映射，这个数据结构干这个很方便；（2）算法的设计以及优劣的判断还是依靠时间复杂度+空间复杂度，注意是复杂度，关注的更多的是时间和空间消耗随着问题规模的一个增长快慢程度，显然方法二、方法三比方法一要好很多。方法三比方法二更好，好在平均情况，找到一个结果，立马返回，而不必对每个元素都进行存储。</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
     </div>
@@ -594,10 +633,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>两数之和</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">996</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
     <p><span class="copy-title">发布时间:</span>2020-09-26, 07:46:33</p>
-    <p><span class="copy-title">最后更新:</span>2020-09-26, 08:23:46</p>
+    <p><span class="copy-title">最后更新:</span>2020-09-28, 17:03:49</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/26/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="两数之和">https://southpost.github.io/2020/09/26/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
