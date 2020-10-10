@@ -553,12 +553,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-10-09 22:57:13'>2020-10-09 10:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-10-10 14:48:15'>2020-10-09 10:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:488</span>
+        <span>字数:487</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -588,7 +588,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#两数相加"><span class="toc-text">两数相加</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目："><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解法一："><span class="toc-text">解法一：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#两数相加"><span class="toc-text">两数相加</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目："><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解法："><span class="toc-text">解法：</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -611,11 +611,11 @@
 <p>示例：</p>
 <p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
 <hr>
-<h3 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h3><ul>
+<h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><ul>
 <li>对于链表问题，返回结果为头结点时，通常需要先初始化一个预先指针 pre，该指针的下一个节点指向真正的头结点head。使用预先指针的目的在于链表初始化时无可用节点值，而且链表构造过程需要指针移动，进而会导致头指针丢失，无法返回结果。</li>
 <li>如果两个链表全部遍历完毕后，进位值为 1，则在新链表最前方添加节点 1</li>
 <li>每一位计算的同时需要考虑上一位的进位问题，而当前位计算结束后同样需要更新进位值</li>
-<li>将两个链表看成是相同长度的进行遍历，如果一个链表较短则在前面补 00，比如 987 + 23 = 987 + 023 = 1010</li>
+<li>将两个链表看成是相同长度的进行遍历，如果一个链表较短则在前面补 0，比如 987 + 23 = 987 + 023 = 1010</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode pre = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  <span class="comment">//用来存储实际进入链表的值</span></span><br><span class="line">        ListNode cur = pre;  <span class="comment">//预处理</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = l1 == <span class="keyword">null</span> ? <span class="number">0</span> : l1.val;</span><br><span class="line">            <span class="keyword">int</span> y = l2 == <span class="keyword">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">            <span class="keyword">int</span> sum = x + y + carry;</span><br><span class="line">            </span><br><span class="line">            carry = sum / <span class="number">10</span>;   <span class="comment">//进位</span></span><br><span class="line">            sum = sum % <span class="number">10</span>;     <span class="comment">//存进链表的实际值</span></span><br><span class="line">            cur.next = <span class="keyword">new</span> ListNode(sum);  <span class="comment">//存进链表</span></span><br><span class="line"></span><br><span class="line">            cur = cur.next;  </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="keyword">null</span>)</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="keyword">null</span>)</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry == <span class="number">1</span>) &#123;</span><br><span class="line">            cur.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -632,10 +632,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>两数相加</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">488</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">487</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
     <p><span class="copy-title">发布时间:</span>2020-10-09, 10:11:41</p>
-    <p><span class="copy-title">最后更新:</span>2020-10-09, 22:57:13</p>
+    <p><span class="copy-title">最后更新:</span>2020-10-10, 14:48:15</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/10/09/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="两数相加">https://southpost.github.io/2020/10/09/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
