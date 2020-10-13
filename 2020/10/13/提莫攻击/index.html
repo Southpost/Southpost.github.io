@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小磊一文玩转Github | Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="小磊一文玩转Github | Hexo">
+  <title>提莫攻击 | Hexo</title>
+  <meta name="keywords" content=" 算法 , 数组遍历 , 数组 , C++ ">
+  <meta name="description" content="提莫攻击 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="提莫攻击 题目：在《英雄联盟》的世界中，有一个叫 “提莫” 的英雄，他的攻击可以让敌方英雄艾希（编者注：寒冰射手）进入中毒状态。现在，给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。 你可以认为提莫在给定的时间点进行攻击，并立即使艾希处于中毒状态。 示例1: 输入: [1,4], 2输出: 4原因: 第 1 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态">
 <meta property="og:type" content="article">
@@ -569,9 +569,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-小磊一文玩转Github" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-提莫攻击" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小磊一文玩转Github</h1>
+        <h1 class="article-title">提莫攻击</h1>
     
     <div class="article-meta">
         
@@ -579,20 +579,34 @@
         
         <span class="book">
             
-                <a  data-rel="Hexo">Hexo</a>
+                <a  data-rel="每日算法">每日算法</a>/
+            
+                <a  data-rel="中等">中等</a>
             
         </span>
         
         
+        <span class="tag">
+            
+            <a class="color3">算法</a>
+            
+            <a class="color5">数组遍历</a>
+            
+            <a class="color3">数组</a>
+            
+            <a class="color4">C++</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-08-06 00:39:19'>2020-03-05 15:30</time>
+        创建时间:<time class="date" title='更新时间: 2020-10-13 19:43:03'>2020-10-13 19:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:315</span>
+        <span>字数:585</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -622,7 +636,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小磊一文玩转Github"><span class="toc-text">小磊一文玩转Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#克隆操作"><span class="toc-text">克隆操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将本地项目推送到GitHub"><span class="toc-text">将本地项目推送到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决冲突"><span class="toc-text">如何解决冲突</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#提莫攻击"><span class="toc-text">提莫攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目："><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解法："><span class="toc-text">解法：</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -638,23 +652,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="小磊一文玩转Github"><a href="#小磊一文玩转Github" class="headerlink" title="小磊一文玩转Github"></a>小磊一文玩转Github</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git安装</a></li>
-<li>Github的注册工作相对来说比较简单，这里就不一一阐述了<h2 id="克隆操作"><a href="#克隆操作" class="headerlink" title="克隆操作"></a>克隆操作</h2></li>
-<li>有些小伙伴在克隆GitHub上的源码或者资料的时候，容易使用download zip等的方式，其实这样是比较慢的，应该使用HTTPS或者SSH的方式。首先复制已经建好的仓库地址，然后在本地建好相应的文件夹，鼠标右击<strong>Git Bash Here</strong>，输入命令<strong>git clone 仓库地址</strong>即可</li>
-<li>这里注意SSH创建密匙的操作。<h2 id="将本地项目推送到GitHub"><a href="#将本地项目推送到GitHub" class="headerlink" title="将本地项目推送到GitHub"></a>将本地项目推送到GitHub</h2></li>
-<li>先到暂存区（index），输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure>
-如果在当前目录，则利用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></li>
-<li>推送，输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;查看&quot;</span><br></pre></td></tr></table></figure></li>
-<li>提交命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2></li>
-<li>可以利用<strong>git status</strong>命令查看当期状态；<strong>初次使用会有邮箱问题，请注意</strong> </li>
-<li>查看日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></li>
-<li>清空当前面板<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cls</span><br></pre></td></tr></table></figure>
-<h2 id="如何解决冲突"><a href="#如何解决冲突" class="headerlink" title="如何解决冲突"></a>如何解决冲突</h2></li>
-<li>多人修改一个文件时，会有冲突的产生。在push之前，输入<strong>git pull</strong>,然后回到当前文件夹，将自己和别人写的有效的东西进行合并，删除无用的东西，执行提交操作</li>
+        <h1 id="提莫攻击"><a href="#提莫攻击" class="headerlink" title="提莫攻击"></a>提莫攻击</h1><hr>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在《英雄联盟》的世界中，有一个叫 “提莫” 的英雄，他的攻击可以让敌方英雄艾希（编者注：寒冰射手）进入中毒状态。现在，给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。</p>
+<p>你可以认为提莫在给定的时间点进行攻击，并立即使艾希处于中毒状态。</p>
+<p>示例1:</p>
+<p>输入: [1,4], 2<br>输出: 4<br>原因: 第 1 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态会维持 2 秒钟，直到第 2 秒末结束。<br>第 4 秒初，提莫再次攻击艾希，使得艾希获得另外 2 秒中毒时间。<br>所以最终输出 4 秒。<br>示例2:</p>
+<p>输入: [1,2], 2<br>输出: 3<br>原因: 第 1 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态会维持 2 秒钟，直到第 2 秒末结束。<br>但是第 2 秒初，提莫再次攻击了已经处于中毒状态的艾希。<br>由于中毒状态不可叠加，提莫在第 2 秒初的这次攻击会在第 3 秒末结束。<br>所以最终输出 3 。</p>
+<p>提示：</p>
+<ul>
+<li>你可以假定时间序列数组的总长度不超过 10000。</li>
+<li>你可以假定提莫攻击时间序列中的数字和提莫攻击的中毒持续时间都是非负整数，并且不超过 10,000,000。</li>
 </ul>
-
+<hr>
+<h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findPoisonedDuration</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; timeSeries, <span class="keyword">int</span> duration)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(timeSeries.empty()) <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//没有攻击，不中毒(数组为空)</span></span><br><span class="line">        <span class="comment">//攻击开始一次，则返回持续时间</span></span><br><span class="line">        <span class="keyword">if</span>(timeSeries.<span class="built_in">size</span>()==<span class="number">1</span>) <span class="keyword">return</span> duration; </span><br><span class="line">        <span class="keyword">int</span> lastTime = <span class="number">0</span>; <span class="comment">// 持续时间</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; timeSeries.<span class="built_in">size</span>()<span class="number">-1</span>; i++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(timeSeries[i+<span class="number">1</span>] - timeSeries[i] &gt;= duration) </span><br><span class="line">            <span class="comment">//如果攻击间隔大于中毒持续时长，说明期间只持续一个duration</span></span><br><span class="line">            <span class="comment">//每次中毒重置时长，所以不用考虑上次中毒剩余时间</span></span><br><span class="line">            &#123;</span><br><span class="line">                lastTime += duration;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            <span class="comment">//如果攻击间隔小于中毒持续时长，直接加时间差</span></span><br><span class="line">            &#123;</span><br><span class="line">                lastTime += (timeSeries[i+<span class="number">1</span>] - timeSeries[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//前面的遍历是数组首位时间内持续时长，最后一次攻击还要加上一次持续时间</span></span><br><span class="line">        lastTime += duration;</span><br><span class="line">		<span class="keyword">return</span> lastTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2113132982@qq.com </span>
     </div>
@@ -667,12 +677,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>小磊一文玩转Github</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">315</span></p>
+    <p><span class="copy-title">文章标题:</span>提莫攻击</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">585</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="南邮石磊">南邮石磊</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-05, 15:30:40</p>
-    <p><span class="copy-title">最后更新:</span>2020-08-06, 00:39:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/" title="小磊一文玩转Github">https://southpost.github.io/2020/03/05/%E5%B0%8F%E7%A3%8A%E4%B8%80%E6%96%87%E7%8E%A9%E8%BD%ACGithub/</a>
+    <p><span class="copy-title">发布时间:</span>2020-10-13, 19:12:40</p>
+    <p><span class="copy-title">最后更新:</span>2020-10-13, 19:43:03</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/10/13/%E6%8F%90%E8%8E%AB%E6%94%BB%E5%87%BB/" title="提莫攻击">https://southpost.github.io/2020/10/13/%E6%8F%90%E8%8E%AB%E6%94%BB%E5%87%BB/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
